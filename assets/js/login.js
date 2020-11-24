@@ -75,6 +75,8 @@ function submitData(e) {
 function loginData(e) {
     e.preventDefault();
     let dataStr = $(this).serialize();
+    console.log($(this));
+    console.log(dataStr);
     $.ajax({
         method: 'post',
         url: '/api/login',
