@@ -20,17 +20,17 @@
             </div>
             <!-- 头部区域（可配合layui已有的水平导航） -->
             <ul class="layui-nav layui-layout-right">
-                <li class="layui-nav-item"></li>
+                <li class="layui-nav-item">
 
-                <a href="javascript:;" class="userinfo">
-                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-                    <span class="text-avatar">A</span> 个人中心
-                </a>
-                <dl class="layui-nav-child">
-                    <dd><a href="">基本资料</a></dd>
-                    <dd><a href="">更换头像</a></dd>
-                    <dd><a href="">重置密码</a></dd>
-                </dl>
+                    <a href="javascript:;" class="userinfo">
+                        <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                        <span class="text-avatar">A</span> 个人中心
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="/user/user_info.html" target="ifr">基本资料</a></dd>
+                        <dd><a href="/user/user_avatar.html" target="ifr">更换头像</a></dd>
+                        <dd><a href="/user/user_pwd.html" target="ifr">重置密码</a></dd>
+                    </dl>
                 </li>
                 <li class="layui-nav-item"><a href="javascript:;" id="btnLogout"><span class="iconfont icon-tuichu"></span> 退出</a></li>
             </ul>
@@ -74,14 +74,14 @@
                         </a>
                         <dl class="layui-nav-child">
                             <dd>
-                                <a href="javascript:;">
-                                    <i class="layui-icon layui-icon-app"></i>基本资料</a>
+                                <a href="/user/user_info.html" target="ifr"><i class="layui-icon layui-icon-app"></i>基本资料</a>
+
                             </dd>
                             <dd>
-                                <a href="javascript:;">
+                                <a href="/user/user_avatar.html" target="ifr">
                                     <i class="layui-icon layui-icon-app"></i>更换头像</a>
                             </dd>
-                            <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>重置密码</a></dd>
+                            <dd><a href="/user/user_pwd.html" target="ifr"><i class="layui-icon layui-icon-app"></i>重置密码</a></dd>
 
                         </dl>
                     </li>

@@ -25,10 +25,9 @@ $.ajaxPrefilter(function(options) {
                     }, function() {
                         localStorage.removeItem('token')
                             // 2. 强制跳转到登录页面
-                        location.href = '/login.html'
+                        window.top.location.href = '/login.html'
                     })
                     // 1. 强制清空 token
-
             }
         }
     })
