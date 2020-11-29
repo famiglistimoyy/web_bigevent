@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>删除事件</title>
+    <script src="/assets/lib/jquery.js"></script>
+    <script src="/assets/js/baseAPI.js"></script>
+
+</head>
+
+<body>
+    <button id="btn-del">删除分类</button>
+    <button id="btn-add">新增分类</button>
+    <script>
+        // 创建数组，用于存储文章分类的id号
+        let arr = [];
+        // 获取列表
+        $.ajax({
+            url: '/my/article/cates',
+            mothod: 'GET',
+            success: function(res) {
+                console.log(res);
+                console.log(res.data);
+                let data = res.data;
+                for (var i = 0; i < data.length; i++) {
+                    // 将文章类名的id添加进arr
+                    arr.push(data[i].Id)
+                }
+                // 为button添加绑定事件
+                $('#btn-del').on('click', function() {
+                    // 遍历arr 得到每一项的id
+                    for (var j = 0; j < arr.length; j++) {
+                        // 删除请求
+                        $.ajax({
+                            method: 'GET',
+                            url: '/my/article/deletecate/' + arr[j],
+                            success: function(res) {
+                                console.log(res);
+                            }
+                        })
+                    }
+                })
+                console.log(arr);
+            }
+        });
+
+        $('#btn-add').on('click', function() {
+            let num = prompt('请输入添加多少条数据：');
+            for (var z = 0; z < num; z++) {
+                $.ajax({
+                    method: 'POST',
+                    url: '/my/article/addcates',
+                    data: {
+                        name: '同桌想删除看看效果' + z,
+                        alias: '死鬼鬼'
+                    },
+                    success: function(res) {
+                        console.log(res);
+                    }
+                })
+            }
+        })
+    </script>
+</body>
+
+</html>

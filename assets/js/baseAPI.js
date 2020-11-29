@@ -16,8 +16,8 @@ $.ajaxPrefilter(function(options) {
         // 全局统一挂载 complete 回调函数
         options.complete = function(res) {
             // console.log('执行了 complete 回调：')
-            console.log(res.responseJSON)
-                // 在 complete 回调函数中，可以使用 res.responseJSON 拿到服务器响应回来的数据
+            // console.log(res.responseJSON)
+            // 在 complete 回调函数中，可以使用 res.responseJSON 拿到服务器响应回来的数据
             if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
                 layer.msg(res.responseJSON.message, {
                         icon: 1,
